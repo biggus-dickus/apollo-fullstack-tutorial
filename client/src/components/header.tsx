@@ -24,8 +24,9 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ image, children = 'Space Explorer' }) => {
-  const email = atob(localStorage.getItem('token') as string);
-  const avatar = image || pickAvatarByEmail(email);
+  const token = localStorage.getItem('token')
+  const email = token ? window.atob(token) : 'unknown'
+  const avatar = image || pickAvatarByEmail(email)
 
   return (
     <Container>
@@ -35,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ image, children = 'Space Explorer' }) =
         <Subheading>{email}</Subheading>
       </div>
     </Container>
-  );
+  )
 }
 
 export default Header;

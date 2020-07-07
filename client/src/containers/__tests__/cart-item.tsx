@@ -38,7 +38,7 @@ xdescribe('cart item', () => {
 
     // since we know the name of the mission, and know that name
     // will be rendered at some point, we can use getByText
-    const { getByText, debug } = renderApollo(<CartItem launchId={1} />, {
+    const { getByText, debug } = renderApollo(<CartItem launchId="1" />, {
       mocks,
       addTypename: false,
     });
@@ -59,7 +59,7 @@ xdescribe('cart item', () => {
 
     // since we know the error message, we can use getByText
     // to recognize the error
-    const { getByText, debug } = renderApollo(<CartItem launchId={1} />, {
+    const { getByText, debug } = renderApollo(<CartItem launchId="1" />, {
       mocks,
       addTypename: false,
     });
